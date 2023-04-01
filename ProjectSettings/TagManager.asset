@@ -13,6 +13,7 @@ TagManager:
   - R6R7Trigger
   - R1R6Trigger
   - R5R8Trigger
+  - Trap
   layers:
   - Default
   - TransparentFX
