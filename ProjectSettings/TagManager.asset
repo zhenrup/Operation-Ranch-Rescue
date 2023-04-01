@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Apple
+  - R1R2Trigger
+  - R2R3Trigger
+  - R3R4Trigger
+  - R4R5Trigger
+  - R5R6Trigger
+  - R6R7Trigger
+  - R1R6Trigger
+  - R5R8Trigger
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 3134584561
+    locked: 0
+  - name: Terrain
+    uniqueID: 1302749105
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
