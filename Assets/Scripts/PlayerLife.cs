@@ -32,8 +32,7 @@ public class PlayerLife : MonoBehaviour
         //first, lets switch to the death animation, and make player movement static
         rigidbody.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
-        Destroy(GameObject.FindWithTag("Player"));
-
+        Destroy(GameObject.FindWithTag("Player"), 5);
         playerManage.respawnAtRecentPos();
     }
     // do something at the restart level
