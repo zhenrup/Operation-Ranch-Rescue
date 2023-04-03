@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private SpriteRenderer sprite;
     private CapsuleCollider2D collider;
+    public Vector2 respawnPosition;
 
     private float directionX = 0f;
     [SerializeField] private float moveSpeed = 7f;
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
 
     private enum CurrentMovement { idle, running, jumping, falling }
-
+    public LinkCamera CameraManager;
     // Start is called before the first frame update
     private void Start()
     {
@@ -24,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
        animator = GetComponent<Animator>();
        sprite = GetComponent<SpriteRenderer>();
        collider = GetComponent<CapsuleCollider2D>();
+       CameraManager = GameObject.FindGameObjectWithTag("CameraManager").GetComponent<LinkCamera>();
+       respawnPosition = new Vector2(2.82f, 6.31f);
     }
 
     // Update is called once per frame
@@ -71,9 +74,27 @@ public class PlayerMovement : MonoBehaviour
 
       animator.SetInteger("state", (int)state);
     }
+   
+    // When the player  touching the trigger
+    // Use the tag of the trigger and the previous room the player is at to determine where the main camera should move to
+   public void OnTriggerEnter2D(Collider2D collision) {
+      CameraManager.swithCameraTo(collision);
+   }
 
-    private bool IsGrounded()
+   public void OnTriggerExit2D(Collider2D collision) {
+      respawnPosition = collision.transform.position;
+   }
+
+   public Vector2 getRespawnPosition() {
+      Debug.Log("respawn Position");
+      Debug.Log(respawnPosition);
+      return respawnPosition;
+   }
+
+
+    public bool IsGrounded()
     {
       return Physics2D.BoxCast(collider.bounds.center, collider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
+    
 }

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    public PlayerMovement playerMove;
+    public PlayerManager playerManage;
     private Animator animator;
     private Rigidbody2D rigidbody;
 
@@ -12,6 +14,8 @@ public class PlayerLife : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
+        playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerManage = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -28,8 +32,11 @@ public class PlayerLife : MonoBehaviour
         //first, lets switch to the death animation, and make player movement static
         rigidbody.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
-    }
+        Destroy(GameObject.FindWithTag("Player"));
 
+        playerManage.respawnAtRecentPos();
+    }
+    // do something at the restart level
     private void RestartLevel()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);

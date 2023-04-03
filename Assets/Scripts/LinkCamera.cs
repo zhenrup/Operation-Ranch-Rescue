@@ -61,10 +61,12 @@ public class LinkCamera : MonoBehaviour
         }
 
     }
-
+    public int getPrevRoom() {
+        return prevRoomNum;
+    }
     // When the player stop touching the trigger
     // Use the tag of the trigger and the previous room the player is at to determine where the main camera should move to
-    private void OnTriggerEnter2D(Collider2D collision) {
+    public void swithCameraTo(Collider2D collision) {
 
         // If the player stop touching the trigger between room 1 and 2
         if (collision.gameObject.CompareTag("R1R2Trigger")) {
