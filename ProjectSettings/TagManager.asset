@@ -15,6 +15,7 @@ TagManager:
   - R5R8Trigger
   - Trap
   - CameraManager
+  - PlayerManager
   layers:
   - Default
   - TransparentFX
