@@ -9,6 +9,7 @@ public class PlayerLife : MonoBehaviour
     public PlayerManager playerManage;
     private Animator animator;
     private Rigidbody2D rigidbody;
+    private IEnumerator coroutine;
 
     private void Start()
     {
@@ -32,13 +33,27 @@ public class PlayerLife : MonoBehaviour
         //first, lets switch to the death animation, and make player movement static
         rigidbody.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
-        Destroy(GameObject.FindWithTag("Player"), 5);
-        playerManage.respawnAtRecentPos();
+        Destroy(GameObject.FindWithTag("Player"), 3);
     }
+
+    // stop a process at a specific moment for a certain amount of wait time
+    private IEnumerator WaitAndPrint(float waitTime)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(waitTime);
+            print("WaitAndPrint " + Time.time);
+        }
+    }
+    
     // do something at the restart level
     private void RestartLevel()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        // wait for 4 seconds before respawn the player
+        coroutine = WaitAndPrint(3f);
+        StartCoroutine(coroutine);
+        playerManage.respawnAtRecentPos();
+        // UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
 }
