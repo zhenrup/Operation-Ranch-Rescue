@@ -165,6 +165,19 @@ public class LinkCamera : MonoBehaviour
                 prevRoomNum = 1;
             }
         }
+        else if (collision.gameObject.CompareTag("R4R9Trigger")) {
+            Debug.Log(collision.gameObject);
+            Debug.Log("player room " + prevRoomNum);
+
+            if (prevRoomNum == 4) {
+                CameraSwitcher.SwitchCamera(room9Cam);
+                prevRoomNum = 9;
+            }
+            else {
+                CameraSwitcher.SwitchCamera(room4Cam);
+                prevRoomNum = 4;
+            }
+        }
     }
 
     // register all camera and shift main camera to the room that the player is current at

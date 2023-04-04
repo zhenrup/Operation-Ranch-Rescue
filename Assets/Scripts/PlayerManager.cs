@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour
         CameraManager = GameObject.FindGameObjectWithTag("CameraManager").GetComponent<LinkCamera>();
         // need to add all available spawn location
         spawnPosList = new Vector2[9]{new Vector2(2.82f, 6.32f), new Vector2(26.19f, 2.3f),
-                                        new Vector2(48.23f,3.39f), new Vector2(62.74f, 11.28f),
+                                        new Vector2(48.23f,3.39f), new Vector2(65.12f, 12.19f),
                                         new Vector2(25.28f, 13.16f), new Vector2(17.39f, 11.28f),
                                         new Vector2(21.15f, 21.18f), new Vector2(41.49f, 21.24f),
                                         new Vector2(51.99f, 21.36f)};
