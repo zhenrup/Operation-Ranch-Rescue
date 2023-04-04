@@ -42,7 +42,6 @@ public class PlayerLife : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(waitTime);
-            print("WaitAndPrint " + Time.time);
         }
     }
     

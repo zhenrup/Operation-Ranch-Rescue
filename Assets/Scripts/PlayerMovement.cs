@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private enum CurrentMovement { idle, running, jumping, falling }
     public LinkCamera CameraManager;
+    public ItemCollector Collector;
     // Start is called before the first frame update
     private void Start()
     {
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
        sprite = GetComponent<SpriteRenderer>();
        collider = GetComponent<CapsuleCollider2D>();
        CameraManager = GameObject.FindGameObjectWithTag("CameraManager").GetComponent<LinkCamera>();
+       Collector = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ItemCollector>();
        respawnPosition = new Vector2(2.82f, 6.31f);
     }
 
@@ -78,7 +80,12 @@ public class PlayerMovement : MonoBehaviour
     // When the player  touching the trigger
     // Use the tag of the trigger and the previous room the player is at to determine where the main camera should move to
    public void OnTriggerEnter2D(Collider2D collision) {
-      CameraManager.swithCameraTo(collision);
+      if (collision.gameObject.CompareTag("Apple")) {
+         Collector.addScore(collision);
+      }
+      else {
+         CameraManager.swithCameraTo(collision);
+      }
    }
 
    public void OnTriggerExit2D(Collider2D collision) {
