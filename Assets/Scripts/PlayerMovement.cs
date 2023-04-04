@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private enum CurrentMovement { idle, running, jumping, falling }
     public LinkCamera CameraManager;
     public ItemCollector Collector;
+
+    
     // Start is called before the first frame update
     private void Start()
     {

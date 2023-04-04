@@ -16,8 +16,12 @@ public class ItemCollector : MonoBehaviour
             Destroy(collision.gameObject);
             apples++;
             applesText.text = "Apples: 0" + apples;
-            Debug.Log("got an apple");
         }
+    }
+
+    // prompt the player to game completion once they collected three apples
+    public bool getAllApple() {
+        return apples == 3;
     }
 
 }

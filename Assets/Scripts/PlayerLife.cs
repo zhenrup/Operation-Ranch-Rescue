@@ -10,6 +10,17 @@ public class PlayerLife : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rigidbody;
     private IEnumerator coroutine;
+    
+    public ItemCollector Collector;
+
+
+    void Update() {
+        if (Collector.getAllApple()) {
+            rigidbody.bodyType = RigidbodyType2D.Static;
+            Debug.Log("YOU GOT ALL APPLES");
+
+        }
+    }
 
     private void Start()
     {
@@ -17,6 +28,8 @@ public class PlayerLife : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         playerManage = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
+        Collector = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ItemCollector>();
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
