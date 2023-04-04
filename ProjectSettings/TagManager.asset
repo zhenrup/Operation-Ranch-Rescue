@@ -16,6 +16,7 @@ TagManager:
   - Trap
   - CameraManager
   - PlayerManager
+  - R4R9Trigger
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,7 @@ public class ItemCollector : MonoBehaviour
 {
     private int apples = 0;
 
-    [SerializeField] private Text applesText;
+    public Text applesText;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
