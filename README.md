@@ -1,4 +1,6 @@
 # Operation-Ranch-Rescue
+- Made by Omar Tahir & Zhenru Peng for CS4483 Game Design Group Game Demo
+
 
 ## Features
 
