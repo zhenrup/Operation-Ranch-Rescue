@@ -1,5 +1,27 @@
 # Operation-Ranch-Rescue
 
+## Features
+
+- Traps around every corner! Our platform game is filled with challenging traps that will test a players platforming skills and patience. 
+-	Time trial – each attempt to finishing the game is timed. Finish the level as fast as you can to secure the record!
+-	Smooth and responsive player movement
+-	Room-to-room camera movement. As a player travels through the different rooms, the camera will pan to the current room.
+
+## Installation
+
+-	Go to https://github.com/zhenrup/Operation-Ranch-Rescue.git
+-	Select ‘Code’
+-	From the drop-down select ‘Download ZIP’
+-	Unzip the folder and extract the files to your directory
+
+OR
+
+Clone repo
+
+```bash
+  git clone https://github.com/zhenrup/Operation-Ranch-Rescue.git
+```
+
 HOW TO EXECUTE
 Go into the Build folder and open 2D Project.exe 
 
