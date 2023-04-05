@@ -17,7 +17,6 @@ public class MenuControl : MonoBehaviour
     {
         Collector = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ItemCollector>();
         gameCompleteUI.SetActive(false);
-        Debug.Log(spentTime);
         // start count time
 
     }
@@ -32,7 +31,7 @@ public class MenuControl : MonoBehaviour
             if (isNotShow) {
                 showTime();
             }
-            
+
             gameCompleteUI.SetActive(true);
         }
     }

@@ -5,6 +5,7 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadScene(string sceneName)
     {
+        Resources.UnloadUnusedAssets();
         SceneManager.LoadScene(sceneName);
     }
 

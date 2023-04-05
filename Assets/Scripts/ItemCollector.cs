@@ -29,7 +29,7 @@ public class ItemCollector : MonoBehaviour
 
     // prompt the player to game completion once they collected three apples
     public bool getAllApple() {
-        return apples == 3;
+        return apples == 1;
     }
 
 }

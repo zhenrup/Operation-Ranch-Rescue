@@ -19,6 +19,8 @@ public class PlayerLife : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
+
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
         playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
@@ -28,6 +30,7 @@ public class PlayerLife : MonoBehaviour
 
     void Update() {
         if (Collector.getAllApple()) {
+            Debug.Log("at player life update");
             PauseGame();
         }
     }
@@ -51,6 +54,9 @@ public class PlayerLife : MonoBehaviour
         rigidbody.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
         Destroy(GameObject.FindWithTag("Player"), 3);
+        coroutine = WaitAndPrint(3f);
+        StartCoroutine(coroutine);
+        // playerManage.respawnAtRecentPos();
     }
 
     // stop a process at a specific moment for a certain amount of wait time
@@ -66,8 +72,7 @@ public class PlayerLife : MonoBehaviour
     private void RestartLevel()
     {
         // wait for 4 seconds before respawn the player
-        coroutine = WaitAndPrint(3f);
-        StartCoroutine(coroutine);
+        // UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
         playerManage.respawnAtRecentPos();
     }
 
