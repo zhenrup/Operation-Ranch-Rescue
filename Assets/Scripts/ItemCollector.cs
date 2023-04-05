@@ -13,9 +13,17 @@ public class ItemCollector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Apple"))
         {
-            Destroy(collision.gameObject);
             apples++;
             applesText.text = "Apples: 0" + apples;
+            Destroy(collision.gameObject);
+
+        }
+    }
+    private IEnumerator WaitAndPrint(float waitTime)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(waitTime);
         }
     }
 

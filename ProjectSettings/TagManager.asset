@@ -18,6 +18,7 @@ TagManager:
   - PlayerManager
   - R4R9Trigger
   - ScoreManager
+  - GameEndMenu
   layers:
   - Default
   - TransparentFX

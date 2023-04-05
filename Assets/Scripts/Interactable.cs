@@ -19,7 +19,7 @@ public class Interactable : MonoBehaviour
         if (isInRange)
         {
             interactionAction.Invoke();
-            Debug.Log("Chest should now be broken");
+            // Debug.Log("Chest should now be broken");
         }
     }
 

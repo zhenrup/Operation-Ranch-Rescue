@@ -13,7 +13,7 @@ public class ChestController : MonoBehaviour
 
     public void BreakChest()
     {
-        Debug.Log("Chest is now broken...");
+        // Debug.Log("Chest is now broken...");
         animator.SetBool("broken", true);
     }   
 }

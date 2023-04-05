@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -14,13 +16,6 @@ public class PlayerLife : MonoBehaviour
     public ItemCollector Collector;
 
 
-    void Update() {
-        if (Collector.getAllApple()) {
-            rigidbody.bodyType = RigidbodyType2D.Static;
-            Debug.Log("YOU GOT ALL APPLES");
-
-        }
-    }
 
     private void Start()
     {
@@ -29,9 +24,18 @@ public class PlayerLife : MonoBehaviour
         playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         playerManage = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
         Collector = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ItemCollector>();
-
     }
 
+    void Update() {
+        if (Collector.getAllApple()) {
+            PauseGame();
+        }
+    }
+
+    void PauseGame() {
+        Time.timeScale = 0;
+
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //checks the object 'tag' that is passed when the player collides with an object
@@ -65,7 +69,6 @@ public class PlayerLife : MonoBehaviour
         coroutine = WaitAndPrint(3f);
         StartCoroutine(coroutine);
         playerManage.respawnAtRecentPos();
-        // UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
 }
