@@ -9070,8 +9070,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.9282, y: 105.26}
-  m_SizeDelta: {x: 388.3012, y: 60.92}
+  m_AnchoredPosition: {x: 7.8854, y: 108.4503}
+  m_SizeDelta: {x: 402.9767, y: 67.3007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481268397
 MonoBehaviour:
@@ -9105,8 +9105,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Congrats!\nYou completed \nOperation Ranch Rescue"
+    m_LineSpacing: 1.1
+  m_Text: "Congrats!\nYou completed \nOperation: Ranch Rescue"
 --- !u!222 &481268398
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10655,7 +10655,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit
+  m_Text: Quit
 --- !u!222 &1047676377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11558,7 +11558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9529412, g: 0.7047623, b: 0.13333331, a: 1}
+  m_Color: {r: 1, g: 0.68235296, b: 0.4392157, a: 0.95686275}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14165,8 +14165,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2097868405}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: ExitGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
