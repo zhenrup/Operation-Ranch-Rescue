@@ -1,4 +1,4 @@
-# Operation-Ranch-Rescue
+# Operation: Ranch Rescue
 - Made by Omar Tahir & Zhenru Peng for CS4483 Game Design Group Game Demo
 
 
@@ -26,7 +26,7 @@ Clone repo
 
 ## How to execute
 
-- Open Operation_Ranch_Rescue folder
+- Open Operation-Ranch-Rescue folder
 - Go into the 'Build' folder
 - Open '2D Project.exe
 
